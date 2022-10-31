@@ -1,0 +1,58 @@
+<?php 
+$barang = [
+    [
+        "produk" => "televisi",
+        "diskon" => 15,
+        "harga" => 1600000
+    ],
+    [
+        "produk" => "kulkas",
+        "diskon" => 30,
+        "harga" => 3000000
+    ],
+    [
+        "produk" => "komputer",
+        "diskon" => 30,
+        "harga" => 2300000
+    ]
+
+    ];
+
+if(isset($_POST ['barang']) && isset($_POST['total'])) {
+    $totalharga = 0;
+    $index = array_search($_POST['barang'],array_column($barang, 'produk'));
+    if ($index){
+
+    }
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Total Harga</title>
+</head>
+<body>
+    <table align="center" border="1">
+        <form method="POST" action="">
+            <h3 align="center">Cek Total Harga</h3>
+            <tr>
+                <td>Barang</td>
+                <td>
+                    <select name="barang">
+                        <option hidden>Pilih Barang</br>
+                        <?php
+                        foreach ($barang as $br) { }
+                        ?>
+                        <option value="<? $br['produk']?>"><?= $br['produk']?></option>
+                        </select>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>Total Barang</td>
+                        <td><input type="number" name="total">
+    
+</body>
+</html>
